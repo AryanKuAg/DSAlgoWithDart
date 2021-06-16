@@ -40,10 +40,43 @@ dynamic pairOfSum(List myList, int sum){
         }
     }
 
-    if(result.length == 0){
+    if(result.isEmpty){
         return 'Pair not found';
     }
+    List okay = [];
     
-
-    return result;
+    result.forEach((l){
+      (l as List).sort();
+      okay.add(l);
+    });
+  
+  
+    
+ Map myMap = {};
+  
+  okay.forEach((yes){
+    myMap.addAll({yes[0]:yes[1]});
+  });
+  
+  List lastOne = [];
+  
+  myMap.forEach((k,v){
+    
+    lastOne.add([k,v]);
+  });
+  
+    return lastOne;
 }
+
+
+
+  
+
+
+
+
+
+
+
+
+
